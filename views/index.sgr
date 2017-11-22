@@ -16,7 +16,7 @@ extends(src='layout.sgr')
 			p
 				button(type='submit') Send
 
-		form(name='order', netlify-honeypot='bot-field', action='thank-you', netlify)
+		form(name='order' netlify-honeypot='bot-field' action='thank-you' netlify data-netlify="true")
 			p.hidden
 				label
 					| Don’t fill this out: 
@@ -24,7 +24,7 @@ extends(src='layout.sgr')
 			p
 				label
 					| Email: 
-					input(type='text', name='name')
+					input(type='text' name='name')
 			p
 				label
 					| Message: 
