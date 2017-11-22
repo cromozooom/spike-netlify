@@ -1,14 +1,14 @@
 extends(src='layout.sgr')
 	block(name='content')
-		form(name='contact', netlify='')
+		form(name='contact' netlify data-netlify="true")
 			p
 				label
 				| Your Name: 
-				input(type='text', name='name')
+				input(type='text' name='name')
 			p
 				label
 				| Your Email: 
-				input(type='email', name='email')
+				input(type='email' name='email')
 			p
 				label
 				| Message: 
