@@ -16,6 +16,22 @@ extends(src='layout.sgr')
 			p
 				button(type='submit') Send
 
+		form(name='order', netlify-honeypot='bot-field', action='thank-you', netlify)
+			p.hidden
+				label
+					| Don’t fill this out: 
+					input(name='bot-field')
+			p
+				label
+					| Email: 
+					input(type='text', name='name')
+			p
+				label
+					| Message: 
+					textarea(name='message')
+			p
+				button(type='”submit”') Send
+
 		
 		h2 Hello World!
 		p(retext-skip) Thanks for using <a href='https://github.com/static-dev/spike'>spike</a>
