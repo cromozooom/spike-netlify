@@ -1,3 +1,4 @@
 extends(src='layout.sgr')
 	block(name='content')
 		p Thanks
+		a(href="/") go back
