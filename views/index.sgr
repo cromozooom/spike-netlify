@@ -1,5 +1,6 @@
 extends(src='layout.sgr')
 	block(name='content')
+		h1 Contact form
 		form(name='contact' netlify data-netlify="true")
 			p
 				label
@@ -15,7 +16,8 @@ extends(src='layout.sgr')
 				textarea(name='message')
 			p
 				button(type='submit') Send
-
+		hr
+		h1 Order
 		form(name='order' netlify-honeypot='bot-field' action='thank-you' netlify data-netlify="true")
 			p.hidden
 				label
