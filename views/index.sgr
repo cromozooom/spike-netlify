@@ -5,9 +5,13 @@ extends(src='layout.sgr')
 		//- ul
 		//-	each(loop='item in myData.menu')
 		//-		li: p {{ item.link }}
+		
 		ul
 			each(loop='item in artworks')
-				li: p {{ item.titleArtwork }}
+				li
+					//- {{item.idArtwork}}
+					a(href=artwork/{{{item.idArtwork}}})
+						| {{ item.titleArtwork }}
 		
 
 		h6 sample data

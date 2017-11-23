@@ -1,0 +1,27 @@
+extends(src='../views/layout.sgr')
+	block(name='content')
+		a(href="/") back
+
+		h1 {{{item.titleArtwork}}}
+		small {{{item.idArtwork}}}
+		hr
+		h4 order {{{item.titleArtwork}}} - artwork
+		form(name=order-{{{item.titleArtwork}}} netlify-honeypot='bot-field' action='thank-you' netlify data-netlify="true")
+			p.hidden(style="display: none")
+				label
+					| Don’t fill this out: 
+					input(name='bot-field')
+			p
+				label
+					| Email: 
+					input(type='text' name='name')
+			p
+				label
+					| Message: 
+					textarea(name='message')
+			p
+				button(type='”submit”') Send
+		
+		hr
+		h1 data item
+		p {{{ JSON.stringify(item) }}}

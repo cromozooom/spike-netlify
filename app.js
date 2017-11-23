@@ -41,14 +41,15 @@ module.exports = {
 		artworks: { 
 			file: '/data/artworks.json'
 			//transform: (data) => data.artworks
-    },
-    
-    artworks: {
-      file: '/data/artworks.json',
-      template: {
-        path: 'views/templates/artwork.sgr',
-        output: (artwork) => { return `artworks/${artwork.id}.html` }
-      }
-    }
+		},
+	
+		artworkData: {
+			file: '/data/artworks.json',
+			template: {
+				//transform: (data) => { return data.artworks },
+				path: 'templates/artwork.sgr',
+				output: (artwork) => { return `artwork/${artwork.idArtwork}.html` }
+			}
+		}
 	})]
 }
