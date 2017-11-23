@@ -18,7 +18,7 @@ extends(src='layout.sgr')
 		
 		p {{{ JSON.stringify(artworks) }}}
 		
-	//- forms	
+		//- forms	
 		h1 Contact form
 		form(name='contact' netlify data-netlify="true" action='thank-you')
 			p

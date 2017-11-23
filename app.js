@@ -41,6 +41,14 @@ module.exports = {
 		artworks: { 
 			file: '/data/artworks.json'
 			//transform: (data) => data.artworks
-		}
+    },
+    
+    artworks: {
+      file: '/data/artworks.json',
+      template: {
+        path: 'views/templates/artwork.sgr',
+        output: (artwork) => { return `artworks/${artwork.id}.html` }
+      }
+    }
 	})]
 }
