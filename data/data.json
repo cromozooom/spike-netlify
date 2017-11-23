@@ -1,14 +1,12 @@
-{ "data": 
-	{
-		"foo": "bar",
-		"menu": {
-			{
-				"link": "www.google.com",
-				"txt": "home"
-			},{
-				"link": "www.google.com",
-				"txt": "home"
-			}
+{
+	"text": "sample",
+	"menu": [
+		{
+			"link": "www.google.com",
+			"txt": "home"
+		},{
+			"link": "www.google.com",
+			"txt": "home"
 		}
-	}
+	]
 }

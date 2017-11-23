@@ -9,7 +9,8 @@ const env = process.env.SPIKE_ENV
 // JSON
 const Records = require('spike-records')
 const standard = require('reshape-standard')
-const locals = {}
+const info = {}
+
 // end Json
 
 module.exports = {
@@ -30,9 +31,8 @@ module.exports = {
   
   // JSON
   plugins: [new Records({
-    addDataTo: locals,
-    test: { file: './data/data.json' }
+    addDataTo: info,
+    myData: { file: '/data/data.json' },
+    menu: { data: { item: 'home' } }
   })]
-
-
 }
