@@ -6,6 +6,12 @@ const sugarml = require('sugarml')
 const sugarss = require('sugarss')
 const env = process.env.SPIKE_ENV
 
+// JSON
+const Records = require('spike-records')
+const standard = require('reshape-standard')
+const locals = {}
+// end Json
+
 module.exports = {
   devtool: 'source-map',
   matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
@@ -20,5 +26,13 @@ module.exports = {
     minify: env === 'production',
     warnForDuplicates: env !== 'production'
   }),
-  babel: jsStandards()
+  babel: jsStandards(),
+  
+  // JSON
+  plugins: [new Records({
+    addDataTo: locals,
+    test: { file: '/data/data.json' }
+  })]
+
+
 }

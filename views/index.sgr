@@ -1,5 +1,6 @@
 extends(src='layout.sgr')
 	block(name='content')
+		p {{ test.foo }}
 		h1 Contact form
 		form(name='contact' netlify data-netlify="true" action='thank-you')
 			p
