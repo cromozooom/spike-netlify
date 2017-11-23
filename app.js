@@ -5,34 +5,42 @@ const pageId = require('spike-page-id')
 const sugarml = require('sugarml')
 const sugarss = require('sugarss')
 const env = process.env.SPIKE_ENV
+const Records = require('spike-records')		// JSON
 
-// JSON
-const Records = require('spike-records')
-const standard = require('reshape-standard')
-const info = {}
+const standard = require('reshape-standard')	// JSON
+const locals = {}								// JSON
 
-// end Json
+	// end Json
 
 module.exports = {
-  devtool: 'source-map',
-  matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
-  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'readme.md', 'yarn.lock'],
-  reshape: htmlStandards({
-    parser: sugarml,
-    locals: (ctx) => { return { pageId: pageId(ctx), foo: 'bar' } },
-    minify: env === 'production'
-  }),
-  postcss: cssStandards({
-    parser: sugarss,
-    minify: env === 'production',
-    warnForDuplicates: env !== 'production'
-  }),
-  babel: jsStandards(),
-  
-  // JSON
-  plugins: [new Records({
-    addDataTo: info,
-    myData: { file: '/data/data.json' },
-    menu: { data: { item: 'home' } }
-  })]
+	devtool: 'source-map',
+	matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
+	ignore: ['**/layout.sgr', '**/_*', '**/.*', 'readme.md', 'yarn.lock'],
+	
+	reshape: htmlStandards({
+		parser: sugarml,
+		locals: () => locals,
+		minify: env === 'production'
+	}),
+	
+	postcss: cssStandards({
+		parser: sugarss,
+		minify: env === 'production',
+		warnForDuplicates: env !== 'production'
+	}),
+	
+	babel: jsStandards(),
+	
+	// JSON
+	plugins: [new Records({
+		addDataTo: locals,
+		myData: { 
+			file: '/data/data.json'
+			//transform: (data) => data.menu
+		},
+		artworks: { 
+			file: '/data/artworks.json'
+			//transform: (data) => data.artworks
+		}
+	})]
 }

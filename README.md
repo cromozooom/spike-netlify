@@ -14,3 +14,7 @@ example of spike
 Tests are located in `test/**` and are powered by [ava](https://github.com/sindresorhus/ava)
 - `npm install` to ensure devDeps are installed
 - `npm test` to run test suite
+
+## links
+- [reshape standard](https://github.com/reshape/standard)
+- [yputube](https://www.youtube.com/watch?v=0HQGzc46uzE&t=531s)

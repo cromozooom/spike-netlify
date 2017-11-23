@@ -1,15 +1,23 @@
 extends(src='layout.sgr')
 	block(name='content')
-		p {{{ JSON.stringify(locals) }}}
-		p {{{ JSON.stringify(info) }}}
 		
 		//- p {{{ JSON.stringify(test.menu) }}}
-		
-		//- p each(loop='item of menu')
-		
-		
+		//- ul
+		//-	each(loop='item in myData.menu')
+		//-		li: p {{ item.link }}
+		ul
+			each(loop='item in artworks')
+				li: p {{ item.titleArtwork }}
 		
 
+		h6 sample data
+		
+		p {{{ JSON.stringify(myData) }}}
+		
+		hr
+		
+		p {{{ JSON.stringify(artworks) }}}
+		
 	//- forms	
 		h1 Contact form
 		form(name='contact' netlify data-netlify="true" action='thank-you')
