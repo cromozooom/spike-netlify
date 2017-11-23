@@ -31,7 +31,7 @@ module.exports = {
   // JSON
   plugins: [new Records({
     addDataTo: locals,
-    test: { file: '/data/data.json' }
+    test: { file: './data/data.json' }
   })]
 
 
